@@ -15,18 +15,32 @@ class App extends Component {
     this.handleFormReset = this.handleFormReset.bind(this);
   }
 
+  /**
+   * Method is used to handle the api error
+   */
   handleApiError() {
     alert('Unable to submit location, Server error occured!!');
   }
 
+  /**
+   * Method is used to handle the progress state
+   */
   handleInProgressState(state) {
     alert(state);
   }
 
-  handleRouteFaliure(route) {
-    alert(route.error);
+  /**
+   * Method is used to handle route failure
+   * @param {error msg} route 
+   */
+  handleRouteFaliure(error) {
+    alert(error);
   }
 
+  /**
+   * Method is used to handle the driving route of the delivery
+   * @param {driving route} route 
+   */
   handleDrivingRoute(route) {
     const directionPath = [];
     if (route && route.path) {
@@ -37,12 +51,13 @@ class App extends Component {
           directionPath.push(pointLatLng);
       }
     }
-    console.log('directionPath ', directionPath);
     this.setState({ driverRoute : directionPath });
   }
 
+  /**
+   * Method is used to handle the form reset callback
+   */
   handleFormReset() {
-    console.log('form reset');
     this.setState({ driverRoute : [] });
   }
  

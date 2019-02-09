@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import {Map, GoogleApiWrapper, Polyline} from 'google-maps-react';
- 
+
+/**
+ *  Component is used as a container for google map
+ *  @author Manish Agrawal
+ */
 class MapContainer extends Component {
  
   render() {

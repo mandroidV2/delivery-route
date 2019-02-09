@@ -19,6 +19,10 @@ class DirectionForm extends Component {
         this.handleResetClick = this.handleResetClick.bind(this);
     }
 
+    /**
+     * Method is used to change the state of location inputs
+     * @param {event on element} event 
+     */
     handleLocationChange(event) {
         const value = event.target.value;
         const name = event.target.name;
@@ -27,6 +31,10 @@ class DirectionForm extends Component {
         });
     }
 
+    /**
+     * Method is used to handle the submit event
+     * @param {submit event} event 
+     */
     handleSubmit(event) {
         event.preventDefault();
         // call the api to find the paths
@@ -48,7 +56,7 @@ class DirectionForm extends Component {
                                     this.props.onProgressStateFound(response.status);
                                     break;
                                 case 'failure':
-                                    this.props.onRouteFailure(response);
+                                    this.props.onRouteFailure(response.error);
                                     break;
                                 case 'success':
                                     this.setState({
@@ -67,6 +75,9 @@ class DirectionForm extends Component {
         });
     }
 
+    /**
+     * Method is used to handle reset button click
+     */
     handleResetClick() {
         this.setState({
             source : '',
@@ -78,6 +89,10 @@ class DirectionForm extends Component {
         this.props.onFormReset();
     }
 
+    /**
+     * Method is used to clear the location input
+     * @param {input state name} name 
+     */
     clearInput(name) {
         this.setState({
             [name]: ''
