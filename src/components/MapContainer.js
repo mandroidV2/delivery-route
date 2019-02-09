@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {Map, GoogleApiWrapper, Polyline} from 'google-maps-react';
-import { MAP_API_KEY } from '../constants/Constants';
  
 class MapContainer extends Component {
  
@@ -35,5 +34,5 @@ class MapContainer extends Component {
 }
  
 export default GoogleApiWrapper({
-  apiKey: (MAP_API_KEY)
+  apiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY
 })(MapContainer)

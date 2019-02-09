@@ -1,6 +1,6 @@
 import * as ApiRequest from './ApiRequest'
 
-const BaseURL = "http://localhost:8080"
+const BaseURL = process.env.REACT_APP_API_BASE_URL;
 
 /**
  * Method to submit the source and destination location to the api
