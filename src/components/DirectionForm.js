@@ -113,6 +113,7 @@ class DirectionForm extends Component {
                     {this.state.source ? 
                         <img className="cross-img"
                             onClick={() => this.clearInput('source')}
+                            alt="Clear starting location"
                             src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
                     :  ''}
 
@@ -129,6 +130,7 @@ class DirectionForm extends Component {
                     {this.state.destination ? 
                         <img className="cross-img" 
                             onClick={() => this.clearInput('destination')}
+                            alt="Clear drop-off location"
                             src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
                     :  ''}
 

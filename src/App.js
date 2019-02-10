@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './components/MapContainer';
 import { Container, Row, Col } from 'react-bootstrap';
-import DirectionForm from './components/DirectionFormContainer';
+import DirectionForm from './components/DirectionForm';
 
 class App extends Component {
 
