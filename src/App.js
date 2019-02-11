@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import MapContainer from './components/MapContainer';
 import { Container, Row, Col } from 'react-bootstrap';
-import DirectionForm from './components/DirectionForm';
+import DirectionForm from './components/directionform/DirectionForm.jsx';
+import AlertBox from './components/alertbox/AlertBox.jsx';
+import MapContainer from './components/map/MapContainer.jsx';
 
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-        driverRoute : []
+        driverRoute : [],
+        alert: '',
+        showAlert: false
     }
+    this.handleApiError = this.handleApiError.bind(this);
+    this.handleInProgressState = this.handleInProgressState.bind(this);
+    this.handleRouteFaliure = this.handleRouteFaliure.bind(this);
     this.handleDrivingRoute = this.handleDrivingRoute.bind(this);
     this.handleFormReset = this.handleFormReset.bind(this);
   }
@@ -19,14 +25,20 @@ class App extends Component {
    * Method is used to handle the api error
    */
   handleApiError() {
-    alert('Unable to submit location, Server error occured!!');
+    this.setState({
+      alert : 'Unable to submit location, Server error occured!!',
+      showAlert: true
+    })
   }
 
   /**
    * Method is used to handle the progress state
    */
   handleInProgressState(state) {
-    alert(state);
+    this.setState({
+      alert : state,
+      showAlert: true
+    })
   }
 
   /**
@@ -34,7 +46,10 @@ class App extends Component {
    * @param {error msg} route 
    */
   handleRouteFaliure(error) {
-    alert(error);
+    this.setState({
+      alert : error,
+      showAlert: true
+    })
   }
 
   /**
@@ -61,6 +76,12 @@ class App extends Component {
     this.setState({ driverRoute : [] });
   }
  
+  hideAlert() {
+    this.setState({
+      alert : '',
+      showAlert: false
+    })
+  }
   render() {
     return  (
       <div className="App">
@@ -79,8 +100,9 @@ class App extends Component {
               </Col>
             </Row>
         </Container>
+        <AlertBox alert={this.state.alert} show={this.state.showAlert} onHideAlert={this.hideAlert.bind(this)} />
        </div>
-      );  
+      );
   }
 }
 

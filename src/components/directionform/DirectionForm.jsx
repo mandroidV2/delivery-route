@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import * as ApiManager from '../api/ApiManager'
+import * as ApiManager from '../../api/ApiManager'
+import Loader from '../loader/Loader.jsx'
+
 
 /** Component is used to create the direction input form
  *  @author Manish Agrawal */
@@ -12,7 +14,8 @@ class DirectionForm extends Component {
             destination: '',
             totalDistance : 0,
             totalTime : 0,
-            reset: true
+            reset: true,
+            isLoading: false
         }
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,15 +40,16 @@ class DirectionForm extends Component {
      */
     handleSubmit(event) {
         event.preventDefault();
+        this.setState({ isLoading : true})
         // call the api to find the paths
         ApiManager.submitLocation({}, (status, response, error) => {
             console.log('result : ' , status);console.log('response : ' , response);console.log('error : ' , error);
             if (error) {
                 this.props.onApiErrorOccured();
-                this.setState({ reset: false });
+                this.setState({ reset: false, isLoading: false });
             } else {
                 ApiManager.getDrivingRoute(response.token, (status, response, error) => {
-                    this.setState({ reset: false });
+                    this.setState({ reset: false, isLoading: false });
                     console.log('result : ' , status);console.log('response : ' , response);console.log('error : ' , error);
                     if(error) {
                         this.props.onApiErrorOccured();
@@ -84,7 +88,8 @@ class DirectionForm extends Component {
             destination: '',
             totalDistance: 0,
             totalTime: 0,
-            reset: true
+            reset: true,
+            isLoading: false
         });
         this.props.onFormReset();
     }
@@ -104,52 +109,54 @@ class DirectionForm extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Starting Location</label>
-                    &nbsp;&nbsp;
+                    <br />
                     <input type = "text" 
                         name = "source"
                         value = {this.state.source} 
                         onChange={this.handleLocationChange}  required />
                     
-                    {this.state.source ? 
-                        <img className="cross-img"
-                            onClick={() => this.clearInput('source')}
-                            alt="Clear starting location"
-                            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
-                    :  ''}
+                    <img className="cross_source cross"
+                        onClick={() => this.clearInput('source')}
+                        alt="Clear starting location"
+                        style={{display: this.state.source ? 'inline-block' : 'none'}}
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
+                    
 
                     <br />
                     <br />
                     
                     <label>Drop-off Location</label>
-                    &nbsp;&nbsp;
+                    <br />
                     <input type = "text"
                         name = "destination"
                         value = {this.state.destination}
                         onChange={this.handleLocationChange} required />
                    
-                    {this.state.destination ? 
-                        <img className="cross-img" 
-                            onClick={() => this.clearInput('destination')}
-                            alt="Clear drop-off location"
-                            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
-                    :  ''}
+                    <img className="cross_destination cross" 
+                        onClick={() => this.clearInput('destination')}
+                        alt="Clear drop-off location"
+                        style={{display: this.state.destination ? 'inline-block' : 'none'}}
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg" />
 
                     <br />
                     <br />
 
-                    {this.state.totalDistance !== 0 ?
-                        <div>
-                            Total distance : <span>{this.state.totalDistance}</span>
-                            <br/>
-                            Total time : <span>{this.state.totalTime}</span>
-                        </div> : ''}
-
+                    <div style={{display: this.state.totalDistance !== 0 ? 'inline-block' : 'none'}} >
+                        Total distance : <span>{this.state.totalDistance}</span>
+                        <br/>
+                        Total time : <span>{this.state.totalTime}</span>
+                    </div>
 
                     <br />
+                    <br />
 
-                    <input type = "submit" value={this.state.reset ? 'Submit' : 'Re-Submit'} />
-                    &nbsp;&nbsp;
-                    <input type = "reset" onClick={this.handleResetClick} />
+                    {this.state.isLoading ?  <Loader />
+                     :  <div>
+                            <input type = "submit" value={this.state.reset ? 'Submit' : 'Re-Submit'} />
+                            &nbsp;&nbsp;
+                            <input type = "reset" onClick={this.handleResetClick} />
+                        </div> }
+
                 </form>
             </div>
         );

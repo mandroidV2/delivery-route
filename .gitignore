@@ -14,3 +14,9 @@
 
 # misc
 .DS_Store
+
+#output
+dist
+
+#logs
+*.log*

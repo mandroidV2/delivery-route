@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DirectionForm from './DirectionForm';
+import AlertBox from './AlertBox';
 
-/** Test case is used to check the map container component  */
-describe('DirectionForm', () => {
-    const component = shallow( <DirectionForm /> );
+/** Test case is used to check the alert box component  */
+describe('AlertBox', () => {
+    const component = shallow( <AlertBox /> );
     it('should be defined', () => {
         expect(component).toBeDefined();
     });

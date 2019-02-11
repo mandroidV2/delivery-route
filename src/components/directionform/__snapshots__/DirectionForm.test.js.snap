@@ -1,0 +1,932 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DirectionForm should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DirectionForm />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <form
+        onSubmit={[Function]}
+      >
+        <label>
+          Starting Location
+        </label>
+        <br />
+        <input
+          name="source"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt="Clear starting location"
+          className="cross_source cross"
+          onClick={[Function]}
+          src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <br />
+        <br />
+        <label>
+          Drop-off Location
+        </label>
+        <br />
+        <input
+          name="destination"
+          onChange={[Function]}
+          required={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt="Clear drop-off location"
+          className="cross_destination cross"
+          onClick={[Function]}
+          src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        <br />
+        <br />
+        <div
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        >
+          Total distance : 
+          <span>
+            0
+          </span>
+          <br />
+          Total time : 
+          <span>
+            0
+          </span>
+        </div>
+        <br />
+        <br />
+        <div>
+          <input
+            type="submit"
+            value="Submit"
+          />
+            
+          <input
+            onClick={[Function]}
+            type="reset"
+          />
+        </div>
+      </form>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label>
+            Starting Location
+          </label>,
+          <br />,
+          <input
+            name="source"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />,
+          <img
+            alt="Clear starting location"
+            className="cross_source cross"
+            onClick={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          />,
+          <br />,
+          <br />,
+          <label>
+            Drop-off Location
+          </label>,
+          <br />,
+          <input
+            name="destination"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />,
+          <img
+            alt="Clear drop-off location"
+            className="cross_destination cross"
+            onClick={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          />,
+          <br />,
+          <br />,
+          <div
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Total distance : 
+            <span>
+              0
+            </span>
+            <br />
+            Total time : 
+            <span>
+              0
+            </span>
+          </div>,
+          <br />,
+          <br />,
+          <div>
+            <input
+              type="submit"
+              value="Submit"
+            />
+              
+            <input
+              onClick={[Function]}
+              type="reset"
+            />
+          </div>,
+        ],
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Starting Location",
+          },
+          "ref": null,
+          "rendered": "Starting Location",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "source",
+            "onChange": [Function],
+            "required": true,
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "Clear starting location",
+            "className": "cross_source cross",
+            "onClick": [Function],
+            "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg",
+            "style": Object {
+              "display": "none",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Drop-off Location",
+          },
+          "ref": null,
+          "rendered": "Drop-off Location",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "name": "destination",
+            "onChange": [Function],
+            "required": true,
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "Clear drop-off location",
+            "className": "cross_destination cross",
+            "onClick": [Function],
+            "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg",
+            "style": Object {
+              "display": "none",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Total distance : ",
+              <span>
+                0
+              </span>,
+              <br />,
+              "Total time : ",
+              <span>
+                0
+              </span>,
+            ],
+            "style": Object {
+              "display": "none",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            "Total distance : ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            "Total time : ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                type="submit"
+                value="Submit"
+              />,
+              "  ",
+              <input
+                onClick={[Function]}
+                type="reset"
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "type": "submit",
+                "value": "Submit",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "  ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "onClick": [Function],
+                "type": "reset",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "form",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <form
+          onSubmit={[Function]}
+        >
+          <label>
+            Starting Location
+          </label>
+          <br />
+          <input
+            name="source"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+          <img
+            alt="Clear starting location"
+            className="cross_source cross"
+            onClick={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          />
+          <br />
+          <br />
+          <label>
+            Drop-off Location
+          </label>
+          <br />
+          <input
+            name="destination"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+          <img
+            alt="Clear drop-off location"
+            className="cross_destination cross"
+            onClick={[Function]}
+            src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          />
+          <br />
+          <br />
+          <div
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            Total distance : 
+            <span>
+              0
+            </span>
+            <br />
+            Total time : 
+            <span>
+              0
+            </span>
+          </div>
+          <br />
+          <br />
+          <div>
+            <input
+              type="submit"
+              value="Submit"
+            />
+              
+            <input
+              onClick={[Function]}
+              type="reset"
+            />
+          </div>
+        </form>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label>
+              Starting Location
+            </label>,
+            <br />,
+            <input
+              name="source"
+              onChange={[Function]}
+              required={true}
+              type="text"
+              value=""
+            />,
+            <img
+              alt="Clear starting location"
+              className="cross_source cross"
+              onClick={[Function]}
+              src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            />,
+            <br />,
+            <br />,
+            <label>
+              Drop-off Location
+            </label>,
+            <br />,
+            <input
+              name="destination"
+              onChange={[Function]}
+              required={true}
+              type="text"
+              value=""
+            />,
+            <img
+              alt="Clear drop-off location"
+              className="cross_destination cross"
+              onClick={[Function]}
+              src="https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg"
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            />,
+            <br />,
+            <br />,
+            <div
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+            >
+              Total distance : 
+              <span>
+                0
+              </span>
+              <br />
+              Total time : 
+              <span>
+                0
+              </span>
+            </div>,
+            <br />,
+            <br />,
+            <div>
+              <input
+                type="submit"
+                value="Submit"
+              />
+                
+              <input
+                onClick={[Function]}
+                type="reset"
+              />
+            </div>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Starting Location",
+            },
+            "ref": null,
+            "rendered": "Starting Location",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "name": "source",
+              "onChange": [Function],
+              "required": true,
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "Clear starting location",
+              "className": "cross_source cross",
+              "onClick": [Function],
+              "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg",
+              "style": Object {
+                "display": "none",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Drop-off Location",
+            },
+            "ref": null,
+            "rendered": "Drop-off Location",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "name": "destination",
+              "onChange": [Function],
+              "required": true,
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "Clear drop-off location",
+              "className": "cross_destination cross",
+              "onClick": [Function],
+              "src": "https://upload.wikimedia.org/wikipedia/commons/3/36/Close%2C_Web_Fundamentals.svg",
+              "style": Object {
+                "display": "none",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Total distance : ",
+                <span>
+                  0
+                </span>,
+                <br />,
+                "Total time : ",
+                <span>
+                  0
+                </span>,
+              ],
+              "style": Object {
+                "display": "none",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              "Total distance : ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 0,
+                },
+                "ref": null,
+                "rendered": 0,
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "Total time : ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 0,
+                },
+                "ref": null,
+                "rendered": 0,
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  type="submit"
+                  value="Submit"
+                />,
+                "  ",
+                <input
+                  onClick={[Function]}
+                  type="reset"
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "type": "submit",
+                  "value": "Submit",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              "  ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "onClick": [Function],
+                  "type": "reset",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "form",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
