@@ -8,8 +8,6 @@ import Axios from "axios";
  * @param {result callback} result 
  */
 export function makeApiRequest(apiUrl, apiMethod, params, result) {
-    console.log("apiUrl -", apiUrl, " apiMethod - ", apiMethod, " params -  ", params);
-
     if (window.navigator.onLine) {
         Axios({method: apiMethod, url: apiUrl, data: params, headers: {}})
             .then(response => { result(true, response.data, null);})

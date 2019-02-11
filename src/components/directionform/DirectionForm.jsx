@@ -52,7 +52,6 @@ class DirectionForm extends Component {
     handleLocationChange(event) {
         const value = event.target.value;
         const name = event.target.name;
-        console.log(name , ' ', value)
         this.setState({
             [name]: value
         });
@@ -67,14 +66,12 @@ class DirectionForm extends Component {
         this.setState({ isLoading : true})
         // call the api to find the paths
         ApiManager.submitLocation({}, (status, response, error) => {
-            console.log('result : ' , status);console.log('response : ' , response);console.log('error : ' , error);
             if (error) {
                 this.props.onApiErrorOccured();
                 this.setState({ reset: false, isLoading: false });
             } else {
                 ApiManager.getDrivingRoute(response.token, (status, response, error) => {
                     this.setState({ reset: false, isLoading: false });
-                    console.log('result : ' , status);console.log('response : ' , response);console.log('error : ' , error);
                     if(error) {
                         this.props.onApiErrorOccured();
                     } else {
@@ -138,7 +135,6 @@ class DirectionForm extends Component {
                         name = "source"
                         ref = "sourceInput"
                         value = {this.state.source}
-                        onClick={() => {console.log('clicked')}}
                         onChange={this.handleLocationChange}  required />
                     
                     <img className="cross_source cross"
