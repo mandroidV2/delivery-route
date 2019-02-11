@@ -61,43 +61,41 @@ class DirectionForm extends Component {
      * Method is used to handle the submit event
      * @param {submit event} event 
      */
-    handleSubmit(event) {
+    handleSubmit = async (event) => {
         event.preventDefault();
         this.setState({ isLoading : true})
-        // call the api to find the paths
-        ApiManager.submitLocation({}, (status, response, error) => {
-            if (error) {
-                this.props.onApiErrorOccured();
-                this.setState({ reset: false, isLoading: false });
-            } else {
-                ApiManager.getDrivingRoute(response.token, (status, response, error) => {
-                    this.setState({ reset: false, isLoading: false });
-                    if(error) {
-                        this.props.onApiErrorOccured();
-                    } else {
-                        if (response) {
-                            switch(response.status) {
-                                case 'in progress':
-                                    this.props.onProgressStateFound(response.status);
-                                    break;
-                                case 'failure':
-                                    this.props.onRouteFailure(response.error);
-                                    break;
-                                case 'success':
-                                    this.setState({
-                                        totalDistance : response.total_distance,
-                                        totalTime: response.total_time
-                                    });
-                                    this.props.onDrivingRouteFound(response);
-                                    break;
-                                default:
-                                    break;
-                            }
-                          }
-                    }
-                })
+
+        // gather form data
+        var locationData = {};
+        locationData.source = this.state.source;
+        locationData.destination = this.state.destination;
+
+        // fire the submit location api
+        var result = await ApiManager.submitLocation(locationData).catch(err => { this.props.onApiErrorOccured();});
+        if (result && result.data && result.data.token) {
+            var direction = await ApiManager.getDrivingRoute(result.data.token).catch(err => this.props.onApiErrorOccured());
+            if (direction && direction.data) {
+                let response = direction.data;
+                switch(response.status) {
+                    case 'in progress':
+                        this.props.onProgressStateFound(response.status);
+                        break;
+                    case 'failure':
+                        this.props.onRouteFailure(response.error);
+                        break;
+                    case 'success':
+                        this.setState({
+                            totalDistance : response.total_distance,
+                            totalTime: response.total_time
+                        });
+                        this.props.onDrivingRouteFound(response);
+                        break;
+                    default:
+                        break;
+                }
             }
-        });
+        }
+        this.setState({ reset: false, isLoading: false });
     }
 
     /**

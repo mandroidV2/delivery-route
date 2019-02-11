@@ -1,8 +1,11 @@
 ### Pre-Requisties
 - Mock Api to run the app
+- Google maps api key
 
 ### App configuration
-- create `.env` and put Api base url and Google map api key
+create `.env` file and put following keys
+**REACT_APP_API_BASE_URL** - Api base url
+**REACT_APP_GOOGLE_MAP_API_KEY** - Google maps api key
 
 ### Steps to run the app
 

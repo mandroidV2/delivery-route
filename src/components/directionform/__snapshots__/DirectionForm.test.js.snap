@@ -30,7 +30,6 @@ ShallowWrapper {
         <input
           name="source"
           onChange={[Function]}
-          onClick={[Function]}
           required={true}
           type="text"
           value=""
@@ -118,7 +117,6 @@ ShallowWrapper {
           <input
             name="source"
             onChange={[Function]}
-            onClick={[Function]}
             required={true}
             type="text"
             value=""
@@ -222,7 +220,6 @@ ShallowWrapper {
           "props": Object {
             "name": "source",
             "onChange": [Function],
-            "onClick": [Function],
             "required": true,
             "type": "text",
             "value": "",
@@ -480,7 +477,6 @@ ShallowWrapper {
           <input
             name="source"
             onChange={[Function]}
-            onClick={[Function]}
             required={true}
             type="text"
             value=""
@@ -568,7 +564,6 @@ ShallowWrapper {
             <input
               name="source"
               onChange={[Function]}
-              onClick={[Function]}
               required={true}
               type="text"
               value=""
@@ -672,7 +667,6 @@ ShallowWrapper {
             "props": Object {
               "name": "source",
               "onChange": [Function],
-              "onClick": [Function],
               "required": true,
               "type": "text",
               "value": "",

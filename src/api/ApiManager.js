@@ -1,39 +1,29 @@
-import * as ApiRequest from './ApiRequest'
+import axios from 'axios';
 
-const BaseURL = process.env.REACT_APP_API_BASE_URL;
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const ROUTE_PATH = '/route';
 
 /**
- * Method to submit the source and destination location to the api
- * @param {api params} params 
- * @param {result} result 
+ * @description Wrapper over axios
  */
-export function submitLocation(params, result) {
-    ApiRequest.makeApiRequest(BaseURL + "/route",
-        "post", params,
-        function (sucess, response, error) {
-            // place to do some function dependent work
+const client = axios.create({
+    baseURL: BASE_URL
+});
 
-            // returning result
-            result(sucess, response, error);
-        }
-      );
+/**
+ * @description Submit location
+ * @param data : post data 
+ */
+export const submitLocation = data => {
+    return client.post(ROUTE_PATH, data);
 }
 
 /**
- * Method to get the driving route from token
- * @param {token to get route} token 
- * @param {result callback} result 
+ * Get driving route
+ * @param token : send token in url to fetch the route detail
  */
-export function getDrivingRoute(token, result) {
-    if (token != null) {
-        ApiRequest.makeApiRequest(BaseURL + "/route/" + token,
-            "get", {},
-            function (sucess, response, error) {
-                // place to do some function dependent work
-
-                // returning result
-                result(sucess, response, error);
-            }
-        );
-    }
+export const getDrivingRoute = (token) => {
+    return  client.get(ROUTE_PATH + '/'+token);
 }
+
+
