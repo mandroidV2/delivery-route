@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as ApiManager from '../../api/ApiManager'
 import Loader from '../loader/Loader.jsx'
-
+import maps from '../map/mapConfig'
 
 /** Component is used to create the direction input form
  *  @author Manish Agrawal */
@@ -20,7 +20,30 @@ class DirectionForm extends Component {
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleResetClick = this.handleResetClick.bind(this);
+        this.autoComplete = this.autoComplete.bind(this);
     }
+
+    componentDidMount() {
+        this.autoComplete();
+    }
+
+    /**
+     * Method is used to implement autocomplete functionality
+     */
+    autoComplete = async () => {
+        const maps = await this.props.maps();
+        const _this = this;
+        new maps.places.Autocomplete(this.refs.sourceInput).addListener('place_changed',
+            function() {
+                _this.setState({source:  this.getPlace().formatted_address})
+            }
+        );
+        new maps.places.Autocomplete(this.refs.destinationInput).addListener('place_changed',
+            function() {
+                _this.setState({destination: this.getPlace().formatted_address})
+            })
+        ;
+    };
 
     /**
      * Method is used to change the state of location inputs
@@ -29,6 +52,7 @@ class DirectionForm extends Component {
     handleLocationChange(event) {
         const value = event.target.value;
         const name = event.target.name;
+        console.log(name , ' ', value)
         this.setState({
             [name]: value
         });
@@ -112,7 +136,9 @@ class DirectionForm extends Component {
                     <br />
                     <input type = "text" 
                         name = "source"
-                        value = {this.state.source} 
+                        ref = "sourceInput"
+                        value = {this.state.source}
+                        onClick={() => {console.log('clicked')}}
                         onChange={this.handleLocationChange}  required />
                     
                     <img className="cross_source cross"
@@ -129,6 +155,7 @@ class DirectionForm extends Component {
                     <br />
                     <input type = "text"
                         name = "destination"
+                        ref = "destinationInput"
                         value = {this.state.destination}
                         onChange={this.handleLocationChange} required />
                    
@@ -161,6 +188,10 @@ class DirectionForm extends Component {
             </div>
         );
     }
+}
+
+DirectionForm.defaultProps = {
+    maps
 }
 
 export default DirectionForm

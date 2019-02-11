@@ -5,12 +5,16 @@ import DirectionForm from './components/directionform/DirectionForm.jsx';
 import AlertBox from './components/alertbox/AlertBox.jsx';
 import MapContainer from './components/map/MapContainer.jsx';
 
+/**
+ *  App component
+ *  @author Manish Agrawal
+ */
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-        driverRoute : [],
+        direction: null,
         alert: '',
         showAlert: false
     }
@@ -57,23 +61,14 @@ class App extends Component {
    * @param {driving route} route 
    */
   handleDrivingRoute(route) {
-    const directionPath = [];
-    if (route && route.path) {
-      for (const point of route.path) {
-          const pointLatLng = {};
-          pointLatLng.lat = parseFloat(point[0]);
-          pointLatLng.lng = parseFloat(point[1]);
-          directionPath.push(pointLatLng);
-      }
-    }
-    this.setState({ driverRoute : directionPath });
+    this.setState({ direction: route });
   }
 
   /**
    * Method is used to handle the form reset callback
    */
   handleFormReset() {
-    this.setState({ driverRoute : [] });
+    this.setState({ direction: null });
   }
  
   hideAlert() {
@@ -96,7 +91,8 @@ class App extends Component {
                   onFormReset={this.handleFormReset} />
               </Col>
               <Col xs={12} sm={8} md={8} lg={8} className="full-height">
-                <MapContainer path={this.state.driverRoute} />
+                <MapContainer
+                  directions={this.state.direction} />
               </Col>
             </Row>
         </Container>

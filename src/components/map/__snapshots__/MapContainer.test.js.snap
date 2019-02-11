@@ -3,7 +3,9 @@
 exports[`MapContainer should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Wrapper />,
+  Symbol(enzyme.__unrendered__): <MapContainer
+    maps={[Function]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -16,21 +18,31 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
-    "props": Object {},
-    "ref": null,
+    "nodeType": "host",
+    "props": Object {
+      "style": Object {
+        "height": "500px",
+        "width": "100%",
+      },
+    },
+    "ref": "mapContainer",
     "rendered": null,
-    "type": [Function],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
-      "props": Object {},
-      "ref": null,
+      "nodeType": "host",
+      "props": Object {
+        "style": Object {
+          "height": "500px",
+          "width": "100%",
+        },
+      },
+      "ref": "mapContainer",
       "rendered": null,
-      "type": [Function],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

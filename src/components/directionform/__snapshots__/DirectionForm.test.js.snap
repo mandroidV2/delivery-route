@@ -3,7 +3,9 @@
 exports[`DirectionForm should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <DirectionForm />,
+  Symbol(enzyme.__unrendered__): <DirectionForm
+    maps={[Function]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -28,6 +30,7 @@ ShallowWrapper {
         <input
           name="source"
           onChange={[Function]}
+          onClick={[Function]}
           required={true}
           type="text"
           value=""
@@ -115,6 +118,7 @@ ShallowWrapper {
           <input
             name="source"
             onChange={[Function]}
+            onClick={[Function]}
             required={true}
             type="text"
             value=""
@@ -218,11 +222,12 @@ ShallowWrapper {
           "props": Object {
             "name": "source",
             "onChange": [Function],
+            "onClick": [Function],
             "required": true,
             "type": "text",
             "value": "",
           },
-          "ref": null,
+          "ref": "sourceInput",
           "rendered": null,
           "type": "input",
         },
@@ -292,7 +297,7 @@ ShallowWrapper {
             "type": "text",
             "value": "",
           },
-          "ref": null,
+          "ref": "destinationInput",
           "rendered": null,
           "type": "input",
         },
@@ -475,6 +480,7 @@ ShallowWrapper {
           <input
             name="source"
             onChange={[Function]}
+            onClick={[Function]}
             required={true}
             type="text"
             value=""
@@ -562,6 +568,7 @@ ShallowWrapper {
             <input
               name="source"
               onChange={[Function]}
+              onClick={[Function]}
               required={true}
               type="text"
               value=""
@@ -665,11 +672,12 @@ ShallowWrapper {
             "props": Object {
               "name": "source",
               "onChange": [Function],
+              "onClick": [Function],
               "required": true,
               "type": "text",
               "value": "",
             },
-            "ref": null,
+            "ref": "sourceInput",
             "rendered": null,
             "type": "input",
           },
@@ -739,7 +747,7 @@ ShallowWrapper {
               "type": "text",
               "value": "",
             },
-            "ref": null,
+            "ref": "destinationInput",
             "rendered": null,
             "type": "input",
           },
