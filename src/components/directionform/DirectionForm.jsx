@@ -18,8 +18,6 @@ class DirectionForm extends Component {
             isLoading: false
         }
         this.handleLocationChange = this.handleLocationChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleResetClick = this.handleResetClick.bind(this);
         this.autoComplete = this.autoComplete.bind(this);
     }
 
@@ -126,7 +124,7 @@ class DirectionForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit.bind()}>
                     <label>Starting Location</label>
                     <br />
                     <input type = "text" 
@@ -175,7 +173,7 @@ class DirectionForm extends Component {
                      :  <div>
                             <input type = "submit" value={this.state.reset ? 'Submit' : 'Re-Submit'} />
                             &nbsp;&nbsp;
-                            <input type = "reset" onClick={this.handleResetClick} />
+                            <input type = "reset" onClick={this.handleResetClick.bind(this)} />
                         </div> }
 
                 </form>

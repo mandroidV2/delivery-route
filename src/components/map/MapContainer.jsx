@@ -61,15 +61,7 @@ class MapContainer extends React.Component {
         });
     };
 
-    componentDidUpdate(props, state, snapShot) {
-        if (snapShot) {
-            if(snapShot === 'RESET_MAP'){
-                this.initMap();
-            } else {
-                this.showDirections(snapShot);
-            }  
-        }
-    }
+  
 
     /**
      * @description checking the prev props and the new props are same or not.
@@ -89,19 +81,15 @@ class MapContainer extends React.Component {
         return true;
     }
 
-    /**
-     * Method is used to check wheather it going to update map or reset the map 
-     * @param {*} prevProps 
-     */
-    getSnapshotBeforeUpdate(prevProps) {
+    componentDidUpdate(prevProps) {
         const {directions} = this.props;
         if(prevProps.directions !== directions){
             if(directions === null){
-                return 'RESET_MAP'
-            } 
-            return this.props.directions;
+                this.initMap();
+            } else {
+                this.showDirections(directions);
+            }
         }
-        return null
     }
 
     render() {
